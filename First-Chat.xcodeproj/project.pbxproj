@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0594C4C889CDCB2A1C7668A9 /* Pods_First_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289B0BB50FC493696B2CF544 /* Pods_First_ChatTests.framework */; };
 		0B6A02C01F89CAF300E3EB50 /* TextFieldLooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6A02BF1F89CAF300E3EB50 /* TextFieldLooks.swift */; };
+		0B7CD5741F98E54800592328 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7CD5731F98E54800592328 /* LoginVC.swift */; };
 		0BA077401F876A1C00D3BB43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA0773F1F876A1C00D3BB43 /* AppDelegate.swift */; };
 		0BA077421F876A1C00D3BB43 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA077411F876A1C00D3BB43 /* CameraVC.swift */; };
 		0BA077451F876A1C00D3BB43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA077431F876A1C00D3BB43 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		0BA077681F876A8E00D3BB43 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA077651F876A8D00D3BB43 /* CameraViewController.swift */; };
 		0BA077691F876A8E00D3BB43 /* PhotoCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA077661F876A8D00D3BB43 /* PhotoCaptureDelegate.swift */; };
 		0BDFBDD21F909EAA00194E19 /* ButtonLooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDFBDD11F909EAA00194E19 /* ButtonLooks.swift */; };
+		0BF4F60C1F98EAA1005C2149 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4F60B1F98EAA1005C2149 /* AuthService.swift */; };
 		94507668E094CBBBC78CA8B0 /* Pods_First_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6279E395513055BD20C72F /* Pods_First_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,7 @@
 /* Begin PBXFileReference section */
 		06966AD384A7C174057E006F /* Pods-First-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-First-Chat/Pods-First-Chat.release.xcconfig"; sourceTree = "<group>"; };
 		0B6A02BF1F89CAF300E3EB50 /* TextFieldLooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLooks.swift; sourceTree = "<group>"; };
+		0B7CD5731F98E54800592328 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0B9E247F1F89C093001C4C7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BA0773C1F876A1B00D3BB43 /* First-Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "First-Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BA0773F1F876A1C00D3BB43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		0BA077651F876A8D00D3BB43 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		0BA077661F876A8D00D3BB43 /* PhotoCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureDelegate.swift; sourceTree = "<group>"; };
 		0BDFBDD11F909EAA00194E19 /* ButtonLooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLooks.swift; sourceTree = "<group>"; };
+		0BF4F60B1F98EAA1005C2149 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1DC9274C04A2C5A3B2A117DE /* Pods-First-ChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First-ChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-First-ChatTests/Pods-First-ChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		289B0BB50FC493696B2CF544 /* Pods_First_ChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_First_ChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		514C5542802738E2E49C91C8 /* Pods-First-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-First-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-First-Chat/Pods-First-Chat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			children = (
 				0BA077651F876A8D00D3BB43 /* CameraViewController.swift */,
 				0BA077411F876A1C00D3BB43 /* CameraVC.swift */,
+				0B7CD5731F98E54800592328 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			children = (
 				0BA077661F876A8D00D3BB43 /* PhotoCaptureDelegate.swift */,
 				0BA0773F1F876A1C00D3BB43 /* AppDelegate.swift */,
+				0BF4F60B1F98EAA1005C2149 /* AuthService.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -341,9 +347,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-First-Chat/Pods-First-Chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -356,13 +367,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-First-ChatTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D54AA7EBF58BC419926BD8F3 /* [CP] Check Pods Manifest.lock */ = {
@@ -371,13 +385,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-First-Chat-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -389,6 +406,8 @@
 			files = (
 				0BA077421F876A1C00D3BB43 /* CameraVC.swift in Sources */,
 				0BA077681F876A8E00D3BB43 /* CameraViewController.swift in Sources */,
+				0B7CD5741F98E54800592328 /* LoginVC.swift in Sources */,
+				0BF4F60C1F98EAA1005C2149 /* AuthService.swift in Sources */,
 				0B6A02C01F89CAF300E3EB50 /* TextFieldLooks.swift in Sources */,
 				0BA077401F876A1C00D3BB43 /* AppDelegate.swift in Sources */,
 				0BDFBDD21F909EAA00194E19 /* ButtonLooks.swift in Sources */,

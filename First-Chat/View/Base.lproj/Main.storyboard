@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7sh-IX-ZiH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,16 +70,17 @@
                         <outlet property="cameraBtn" destination="BQu-1r-ymq" id="vNY-Xs-NpL"/>
                         <outlet property="previewView" destination="Cb9-SF-JZ6" id="Zco-k8-YM6"/>
                         <outlet property="recordBtn" destination="6vp-Wl-Ad3" id="86j-px-0ED"/>
+                        <segue destination="7sh-IX-ZiH" kind="show" identifier="LoginVC" id="K51-5X-i2P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="554" y="28"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="g4c-Fs-JYP">
             <objects>
-                <viewController id="7sh-IX-ZiH" sceneMemberID="viewController">
+                <viewController id="7sh-IX-ZiH" customClass="LoginVC" customModule="First_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xkj-94-rie">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +176,9 @@
                                                 <real key="value" value="16"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginBtnPressed:" destination="7sh-IX-ZiH" eventType="touchUpInside" id="fvF-gn-0OQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -203,6 +207,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tbU-pj-l6D"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="PTV-CM-BXh" id="wX8-9J-AeQ"/>
+                        <outlet property="passwordField" destination="2SY-2W-qDX" id="ru3-yu-yny"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6IG-I1-f2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

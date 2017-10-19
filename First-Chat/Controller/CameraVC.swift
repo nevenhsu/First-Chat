@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CameraVC: CameraViewController {
     @IBOutlet weak var cameraBtn: UIButton!
@@ -22,6 +23,15 @@ class CameraVC: CameraViewController {
         super.viewDidLoad()
         toggleCaptureMode(1)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard Auth.auth().currentUser != nil else {
+            performSegue(withIdentifier: "LoginVC", sender: nil)
+            return
+        }
+        
+        
+    }
 
     @IBAction func recordBtnPressed(_ sender: UIButton) {
         toggleMovieRecording()
@@ -32,6 +42,7 @@ class CameraVC: CameraViewController {
         changeCamera()
     }
     
+
 
 }
 
