@@ -23,6 +23,8 @@ class LoginVC: UIViewController {
             AuthService.instance.login(email: email, password: password, onComplete: { (errMsg, data) in
                 if let errMsg = errMsg {
                 self.presentErrorAlert(title: "Error Authencation", msg: errMsg, actionTitle: "Ok")
+                } else {
+                    self.dismiss(animated: true, completion: nil)
                 }
             })
         } else {

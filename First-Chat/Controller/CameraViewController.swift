@@ -11,6 +11,7 @@ import Photos
 
 class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
 	// MARK: View Controller Life Cycle
+    var delegate: FileOutputDelegate?
 	
     override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,6 +26,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 //        
 		// Set up the video preview view.
 		_previewView.session = session
+        
 		
 		/*
 			Check video authorization status. Video access is required and audio
@@ -305,7 +307,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 				}
 			} else {
 				DispatchQueue.main.async {
-					self.resumeButton.isHidden = true
+					self._resumeButton.isHidden = true
 				}
 			}
 		}
@@ -679,7 +681,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 	
 	weak var _recordButton: UIButton!
 	
-	private weak var resumeButton: UIButton!
+	weak var _resumeButton: UIButton!
 	
 	func toggleMovieRecording() {
 		guard let movieFileOutput = self.movieFileOutput else {
@@ -781,9 +783,14 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 		if error != nil {
             print("Movie file finishing error: \(String(describing: error))")
             success = (((error! as NSError).userInfo[AVErrorRecordingSuccessfullyFinishedKey] as AnyObject).boolValue)!
+            self.delegate?.videoRecordingFailed()
 		}
 		
 		if success {
+            
+            self.delegate?.videoRecordingComplete(url: outputFileURL)
+            
+            /*
 			// Check authorization status.
 			PHPhotoLibrary.requestAuthorization { status in
 				if status == .authorized {
@@ -806,6 +813,7 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 			}
 		} else {
 			cleanUp()
+             */
 		}
 		
 		// Enable the Camera and Record buttons to let the user switch camera and start another recording.
@@ -891,12 +899,12 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 					self.isSessionRunning = self.session.isRunning
 				} else {
 					DispatchQueue.main.async {
-						self.resumeButton.isHidden = false
+						self._resumeButton.isHidden = false
 					}
 				}
 			}
 		} else {
-            resumeButton.isHidden = false
+            _resumeButton.isHidden = false
 		}
 	}
 	
@@ -930,10 +938,10 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 			
 			if showResumeButton {
 				// Simply fade-in a button to enable the user to try to resume the session running.
-				resumeButton.alpha = 0
-				resumeButton.isHidden = false
+				_resumeButton.alpha = 0
+				_resumeButton.isHidden = false
 				UIView.animate(withDuration: 0.25) {
-					self.resumeButton.alpha = 1
+					self._resumeButton.alpha = 1
 				}
 			}
 		}
@@ -943,12 +951,12 @@ class CameraViewController: UIViewController, AVCaptureFileOutputRecordingDelega
 	func sessionInterruptionEnded(notification: NSNotification) {
 		print("Capture session interruption ended")
 		
-		if !resumeButton.isHidden {
+		if !_resumeButton.isHidden {
 			UIView.animate(withDuration: 0.25,
 				animations: {
-					self.resumeButton.alpha = 0
+					self._resumeButton.alpha = 0
 				}, completion: { _ in
-					self.resumeButton.isHidden = true
+					self._resumeButton.isHidden = true
 				}
 			)
 		}

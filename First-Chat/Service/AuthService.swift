@@ -23,19 +23,26 @@ class AuthService {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let err = error as NSError? {
                 if let errorCode = AuthErrorCode(rawValue: err.code), errorCode == .userNotFound {
+                    // Create User
                     Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                         if let err = error as NSError? {
                             // Show error to users
                             self.handleAuthError(error: err, onComplete: onComplete)
+                            print("JESS: create failed")
                         } else {
                             if user?.uid != nil {
+                                // Save UID to Database
+                                DataService.instance.saveUser(uid: user!.uid)
+                                
                                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                                     if let err = error as NSError? {
                                         // Show error to users
                                         self.handleAuthError(error: err, onComplete: onComplete)
+                                        print("JESS: Sign in failed")
                                     } else {
                                         // Success
                                         onComplete?(nil,user)
+                                        print("JESS: Sign in successfully")
                                     }
                                 })
                             }
@@ -43,10 +50,12 @@ class AuthService {
                     })
                 } else {
                     self.handleAuthError(error: err, onComplete: onComplete)
+                    print("JESS: Sign in failed")
                 }
             } else {
                 // Success
                 onComplete?(nil,user)
+                print("JESS: Sign in successfully")
             }
         }
     }
